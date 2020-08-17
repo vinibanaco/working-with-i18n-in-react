@@ -23,7 +23,7 @@ function Header() {
         </button>
 
         <button className={styles.languageButton} disabled>
-          <span role="img" aria-label="Change language to Portuguese">
+          <span role="img" aria-label="Change language to English">
             🇺🇸
           </span>
         </button>
