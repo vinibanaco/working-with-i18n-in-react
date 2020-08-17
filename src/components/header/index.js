@@ -6,7 +6,7 @@ import i18n from './i18n';
 import UserContext from '../../cross-cutting/contexts/user';
 
 function Header() {
-  const { language } = useContext(UserContext);
+  const { language, setLanguage } = useContext(UserContext);
 
   return (
     <header className={styles.header}>
@@ -20,7 +20,10 @@ function Header() {
       </nav>
 
       <div>
-        <button className={styles.languageButton} disabled>
+        <button
+          onClick={() => setLanguage('ptBR')}
+          className={styles.languageButton}
+        >
           <span
             role="img"
             title={i18n[language].LANGUAGE_BUTTONS.PORTUGUESE}
@@ -30,7 +33,10 @@ function Header() {
           </span>
         </button>
 
-        <button className={styles.languageButton} disabled>
+        <button
+          onClick={() => setLanguage('enUS')}
+          className={styles.languageButton}
+        >
           <span
             role="img"
             title={i18n[language].LANGUAGE_BUTTONS.ENGLISH}
