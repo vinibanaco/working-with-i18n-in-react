@@ -17,13 +17,21 @@ function Header() {
 
       <div>
         <button className={styles.languageButton} disabled>
-          <span role="img" aria-label="Change language to Portuguese">
+          <span
+            role="img"
+            title="Change language to Portuguese"
+            aria-label="Change language to Portuguese"
+          >
             🇧🇷
           </span>
         </button>
 
         <button className={styles.languageButton} disabled>
-          <span role="img" aria-label="Change language to English">
+          <span
+            role="img"
+            title="Change language to English"
+            aria-label="Change language to English"
+          >
             🇺🇸
           </span>
         </button>
