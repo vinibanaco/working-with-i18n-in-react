@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-const createPersistedState = (name) => {
+const createPersistedState = (name, { fallbackValue = undefined }) => {
   if (!name) {
     throw new Error(`Invalid value supplied to \`name\`: ${name}`);
   }
 
-  return (initialValue = undefined) => {
+  return (initialValue = fallbackValue) => {
     const storageValue = localStorage[name];
 
     const [state, setState] = useState(storageValue);
