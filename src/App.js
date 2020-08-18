@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import styles from './App.module.css';
+import createPersistedState from './cross-cutting/hooks/create-persisted-state';
 
 import UserContext from './cross-cutting/contexts/user';
 import Header from './components/header';
@@ -9,7 +10,8 @@ import Page1 from './modules/page-1';
 import Page2 from './modules/page-2';
 
 function App() {
-  const [language, setLanguage] = useState('enUS');
+  const useLanguageState = createPersistedState('language');
+  const [language, setLanguage] = useLanguageState('enUS');
 
   const userContextValue = {
     language,
