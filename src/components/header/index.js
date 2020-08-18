@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './index.module.css';
 import i18n from './i18n';
-import UserContext from '../../cross-cutting/contexts/user';
+import useLanguage from '../../cross-cutting/hooks/use-language';
 
 function Header() {
-  const { language, setLanguage } = useContext(UserContext);
+  const [language, setLanguage] = useLanguage();
 
   return (
     <header className={styles.header}>

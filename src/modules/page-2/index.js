@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import styles from './index.module.css';
 import i18n from './i18n';
-
-import UserContext from '../../cross-cutting/contexts/user';
+import useLanguage from '../../cross-cutting/hooks/use-language';
 
 function Page2() {
-  const { language } = useContext(UserContext);
+  const [language] = useLanguage();
 
   return (
     <>
